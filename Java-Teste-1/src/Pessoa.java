@@ -79,7 +79,6 @@ public class Pessoa {
     }
 
     public int getIdade(){
-        /*System.out.println("Idade aluno: ");*/
         return (currentYear - this.anoNascimento);
     }
 }
