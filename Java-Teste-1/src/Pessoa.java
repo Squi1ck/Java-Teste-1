@@ -1,4 +1,7 @@
+import java.util.Calendar;
+
 public class Pessoa {
+   int currentYear = Calendar.getInstance().get(Calendar.YEAR);
    private int numeroCC;
    private String nomeProprio;
    private String nomeApelido;
@@ -62,8 +65,21 @@ public class Pessoa {
    public void setDiaNascimento(int diaNascimento) {
     this.diaNascimento = diaNascimento;
    }
-   public String getNomeCompleto(){
+
+    @Override
+    public String toString() {
+        return "Pessoa [numeroCC=" + numeroCC + ", nomeProprio=" + nomeProprio + ", nomeApelido=" + nomeApelido
+                + ", anoNascimento=" + anoNascimento + ", mesNascimento=" + mesNascimento + ", diaNascimento="
+                + diaNascimento + "]";
+    }
+
+    public String getNomeCompleto(){
         String mensagem = this.nomeProprio + " " + this.nomeApelido;
         return mensagem;
+    }
+
+    public int getIdade(){
+        /*System.out.println("Idade aluno: ");*/
+        return (currentYear - this.anoNascimento);
     }
 }
